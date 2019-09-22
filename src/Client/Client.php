@@ -780,7 +780,7 @@ class Client
                         $writer->writeElement('afakulcs', $item['taxRate']);
 
                         $netUnitPrice = $item['netUnitPrice'];
-                        $taxRate = $item['taxRate'];
+                        $taxRate = is_numeric($item['taxRate']) ? $item['taxRate'] : 0.0;
                         $quantity = $item['quantity'];
                         $netPrice = isset($item['netPrice'])
                             ? $item['netPrice']
